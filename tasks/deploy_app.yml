@@ -9,7 +9,7 @@
 - name: update task definitions
   aws_ecs_taskdefinition:
     state: update
-    family: "{{ item }}"
+    arn: "{{ item }}"
     containers:
       - name: todobackend
         image: "{{ image_tag }}"
@@ -88,7 +88,7 @@
     state: update
     name: "{{ cf_stack.stack_outputs.TodobackendService }}"
     cluster: "{{ cf_stack.stack_outputs.EcsCluster }}"
-    task_definitions: "{{ todobackend_task_def_arn }}"
+    task_definition: "{{ todobackend_task_def_arn }}"
   register: update_ecs_service
   when: image_tag is defined
 - debug: msg={{ update_ecs_service }}
