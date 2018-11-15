@@ -12,7 +12,7 @@
     arn: "{{ item }}"
     containers:
       - name: todobackend
-        image: "{{ image_id }}"
+        image: "{{ image_tag }}"
   with_items:
     - "{{ todobackend_task_def_arn }}"
     - "{{ todobackend_adhoc_task_def_arn }}"
