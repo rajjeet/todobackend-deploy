@@ -1,0 +1,10 @@
+---
+vpc_id: vpc-06303f8355b2df1b3
+subnet_id: subnet-0c14bf193719e4a47
+ec2_keypair: ecs-keypair
+instance_count: 2
+db_subnets:
+  - subnet-0c14bf193719e4a47
+  - subnet-0c2558358a9c22b0f
+db_availability_zone: us-east-1a
+db_username: todobackend
