@@ -9,7 +9,7 @@
 - name: update task definitions
   aws_ecs_taskdefinition:
     state: update
-    arn: "{{ item }}"
+    family: "{{ item }}"
     containers:
       - name: todobackend
         image: "{{ image_tag }}"
